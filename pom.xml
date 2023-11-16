@@ -20,6 +20,7 @@
 
     <!--  子模块  -->
     <modules>
+         <module>encrypt-body</module>
     </modules>
 
     <!-- 在properties下声明相应的版本信息，然后在dependency下引用的时候用${spring-version}就可以引入该版本jar包了 -->
