@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!--        <version>2.4.13</version>-->
+        <version>2.6.7</version>
+        <relativePath/> <!-- lookup parent from service -->
+    </parent>
+
+    <groupId>com.xunyat</groupId>
+    <artifactId>spring-boot-common-parent</artifactId>
+    <name>spring-boot-common-parent</name>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+    <description>统一版本管理工程</description>
+
+    <!--  子模块  -->
+    <modules>
+    </modules>
+
+    <!-- 在properties下声明相应的版本信息，然后在dependency下引用的时候用${spring-version}就可以引入该版本jar包了 -->
+    <properties>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+        <tomcat.version>9.0.62</tomcat.version>
+        <spring-boot-starter-tomcat.version>2.6.7</spring-boot-starter-tomcat.version>
+        <spring-beans.version>5.3.19</spring-beans.version>
+        <spring-core.version>5.3.19</spring-core.version>
+        <spring-context.version>5.3.19</spring-context.version>
+        <spring-expression.version>5.3.19</spring-expression.version>
+        <spring-aop.version>5.3.19</spring-aop.version>
+        <spring-webmvc.version>5.3.19</spring-webmvc.version>
+        <spring-web.version>5.3.19</spring-web.version>
+        <!-- 编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- jdk -->
+        <!--        <java.version>15</java.version>-->
+
+        <!-- json 序列化器 -->
+        <gson.version>2.9.0</gson.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <jsoup.version>1.14.3</jsoup.version>
+
+        <!-- mybatis相关依赖 -->
+        <mybatis.version>3.5.9</mybatis.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <mybatis-mate.version>1.2.4</mybatis-mate.version>
+        <mybatis-plus-generator.version>3.5.1</mybatis-plus-generator.version>
+        <dynamic-datasource.version>3.5.1</dynamic-datasource.version>
+        <druid.version>1.2.9</druid.version>
+        <pagehelper.version>1.4.2</pagehelper.version>
+
+        <nekohtml.version>1.9.22</nekohtml.version>
+        <xml-apis.version>2.0.2</xml-apis.version>
+        <batik-ext.version>1.14</batik-ext.version>
+
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
+        <!--        <jedis.version>3.7.0</jedis.version>-->
+        <jedis.version>4.2.3</jedis.version>
+        <jest.version>6.3.1</jest.version>
+        <jna.version>5.11.0</jna.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+        <!-- 工具包依赖 -->
+        <lombok.version>1.18.24</lombok.version>
+        <hutool.version>5.7.22</hutool.version>
+        <pinyin4j.version>2.5.1</pinyin4j.version>
+        <!-- swagger依赖 -->
+        <springfox-swagger2.version>2.10.5</springfox-swagger2.version>
+        <swagger-bootstrap-ui.version>1.9.6</swagger-bootstrap-ui.version>
+        <knife4j.version>2.0.9</knife4j.version>
+        <knife4j-aggregation.version>2.0.9</knife4j-aggregation.version>
+        <!-- log4j依赖 -->
+        <log4j-core.version>2.17.2</log4j-core.version>
+        <log4j-api.version>2.17.2</log4j-api.version>
+        <!--        <log4j-nosql.version>2.9.1</log4j-nosql.version>-->
+        <log4j-to-slf4j.version>2.17.2</log4j-to-slf4j.version>
+        <logback.version>1.2.11</logback.version>
+        <tlog.version>1.4.0</tlog.version>
+        <commons-codec.version>1.15</commons-codec.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
+
+        <!--log异步AsyncLogger需要这个依赖-->
+        <disruptor.version>3.4.4</disruptor.version>
+        <!-- mapstruct 实体类之间转换 -->
+        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+        <snakeyaml.version>1.30</snakeyaml.version>
+
+        <spring-boot-mongodb.version>2.6.7</spring-boot-mongodb.version>
+        <!--  aes 加密支持包  -->
+        <bcprov-jdk15on.version>1.70</bcprov-jdk15on.version>
+        <bcprov-jdk15to18.version>1.71</bcprov-jdk15to18.version>
+
+        <!-- javatuples 元组 -->
+        <javatuples.version>1.2</javatuples.version>
+        <urlrewritefilter.version>4.0.4</urlrewritefilter.version>
+
+        <guava.version>31.1-jre</guava.version>
+
+        <!--  executor  -->
+        <xxl-job-core.version>2.3.0</xxl-job-core.version>
+
+        <!--    es    -->
+        <elasticsearch.version>8.2.0</elasticsearch.version>
+
+        <!-- alibaba cloud 相关依赖 -->
+        <alibaba-sentinel.version>2021.0.1.0</alibaba-sentinel.version>
+        <spring-cloud-alibaba-dependencies.version>2021.0.1.0</spring-cloud-alibaba-dependencies.version>
+        <spring-cloud-starter-alibaba-nacos-discovery.version>2021.0.1.0</spring-cloud-starter-alibaba-nacos-discovery.version>
+        <spring-cloud-starter-alibaba-nacos-config.version>2021.0.1.0</spring-cloud-starter-alibaba-nacos-config.version>
+        <spring-cloud-starter-alibaba-nacos-config-server.version>2021.0.1.0</spring-cloud-starter-alibaba-nacos-config-server.version>
+        <spring-cloud-starter-dubbo.version>2021.0.1.0</spring-cloud-starter-dubbo.version>
+
+        <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
+        <spring-cloud-starter-gateway.version>3.1.2</spring-cloud-starter-gateway.version>
+        <spring-cloud-starter-openfeign.version>3.1.2</spring-cloud-starter-openfeign.version>
+        <spring-cloud-starter-bootstrap.version>3.1.2</spring-cloud-starter-bootstrap.version>
+        <spring-cloud-loadbalancer.version>3.1.2</spring-cloud-loadbalancer.version>
+        <spring-cloud-starter-bus-amqp.version>3.1.0</spring-cloud-starter-bus-amqp.version>
+        <dubbo-registry-nacos.version>3.0.7</dubbo-registry-nacos.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-to-slf4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring-beans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-context.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring-expression.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring-aop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring-web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring-webmvc.version}</version>
+            </dependency>
+
+            <!-- cloud -->
+            <!-- alibaba cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+            </dependency>
+
+            <!--<dependency>-->
+            <!--    <groupId>com.alibaba.cloud</groupId>-->
+            <!--    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
+            <!--    <version>${spring-cloud-starter-alibaba-nacos-discovery.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--    <groupId>org.springframework.cloud</groupId>-->
+            <!--    <artifactId>spring-cloud-starter-gateway</artifactId>-->
+            <!--    <version>${spring-cloud-starter-gateway.version}</version>-->
+            <!--</dependency>-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${spring-cloud-starter-openfeign.version}</version>
+            </dependency>
+            <!--<dependency>-->
+            <!--    <groupId>org.springframework.cloud</groupId>-->
+            <!--    <artifactId>spring-cloud-loadbalancer</artifactId>-->
+            <!--    <version>${spring-cloud-loadbalancer.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--    <groupId>org.springframework.cloud</groupId>-->
+            <!--    <artifactId>spring-cloud-stater-loadbalancer</artifactId>-->
+            <!--    <version>${spring-cloud-loadbalancer.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--    <groupId>com.alibaba.cloud</groupId>-->
+            <!--    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
+            <!--    <version>${spring-cloud-starter-alibaba-nacos-config.version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+            <!--    <groupId>org.springframework.cloud</groupId>-->
+            <!--    <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
+            <!--    <version>${spring-cloud-starter-bootstrap.version}</version>-->
+            <!--</dependency>-->
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+                <version>${spring-cloud-starter-bus-amqp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-dubbo</artifactId>
+                <version>${spring-cloud-starter-dubbo.version}</version>
+            </dependency>
+
+            <!--<dependency>-->
+            <!--    <groupId>org.apache.dubbo</groupId>-->
+            <!--    <artifactId>dubbo-registry-nacos</artifactId>-->
+            <!--    <version>${dubbo-registry-nacos.version}</version>-->
+            <!--</dependency>-->
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!--<dependency>-->
+            <!--    <groupId>com.alibaba.nacos</groupId>-->
+            <!--    <artifactId>nacos-spring-context</artifactId>-->
+            <!--    <version>1.1.1</version>-->
+            <!--</dependency>-->
+
+
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework.cloud</groupId>-->
+            <!--                <artifactId>spring-cloud-starter-loadbalancer</artifactId>-->
+            <!--                <version>${spring-cloud-loadbalancer.version}</version>-->
+            <!--            </dependency>-->
+
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${snakeyaml.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-jdk8 -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.belerweb</groupId>
+                <artifactId>pinyin4j</artifactId>
+                <version>${pinyin4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.yomahub</groupId>
+                <artifactId>tlog-all-spring-boot-starter</artifactId>
+                <version>${tlog.version}</version>
+            </dependency>
+
+            <!-- google json -->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+            <!--  Alibaba json  -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+
+            <!--  mybatisPlus 核心库 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!--<dependency>-->
+            <!--    <groupId>com.baomidou</groupId>-->
+            <!--    <artifactId>mybatis-mate-starter</artifactId>-->
+            <!--    <version>${mybatis-mate.version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+            <!--    <groupId>com.baomidou</groupId>-->
+            <!--    <artifactId>mybatis-mate-annotation</artifactId>-->
+            <!--    <version>${mybatis-mate.version}</version>-->
+            <!--</dependency>-->
+
+            <!-- mybatisPlus 代码生成器 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus-generator.version}</version>
+            </dependency>
+
+            <!-- 引入阿里数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- 动态读写分离 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xml-apis</groupId>
+                <artifactId>xml-apis</artifactId>
+                <version>${xml-apis.version}</version>
+            </dependency>
+
+            <!--  -->
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+
+            <!-- java 模拟请求 httpclient -->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+
+            <!--简化代码的工具包-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!--swagger 相关依赖-->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>1.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-springdoc-ui</artifactId>
+                <version>3.0.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+                <version>2.0.9</version>
+            </dependency>
+            <!--<dependency>-->
+            <!--    <groupId>io.springfox</groupId>-->
+            <!--    <artifactId>springfox-swagger2</artifactId>-->
+            <!--    <version>${springfox-swagger2.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--    <groupId>com.github.xiaoymin</groupId>-->
+            <!--    <artifactId>swagger-bootstrap-ui</artifactId>-->
+            <!--    <version>${swagger-bootstrap-ui.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--    <groupId>com.github.xiaoymin</groupId>-->
+            <!--    <artifactId>knife4j-spring-boot-starter</artifactId>-->
+            <!--    <version>${knife4j.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--    <groupId>com.github.xiaoymin</groupId>-->
+            <!--    <artifactId>knife4j-micro-spring-boot-starter</artifactId>-->
+            <!--    <version>${knife4j.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--    <groupId>com.github.xiaoymin</groupId>-->
+            <!--    <artifactId>knife4j-aggregation-spring-boot-starter</artifactId>-->
+            <!--    <version>${knife4j-aggregation.version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--    <groupId>com.github.pagehelper</groupId>-->
+            <!--    <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+            <!--    <version>${pagehelper.version}</version>-->
+            <!--</dependency>-->
+
+
+            <!-- mongodb 依赖 -->
+            <!--<dependency>-->
+            <!--    <groupId>org.springframework.boot</groupId>-->
+            <!--    <artifactId>spring-boot-starter-data-mongodb</artifactId>-->
+            <!--    <version>${spring-boot-mongodb.version}</version>-->
+            <!--</dependency>-->
+
+            <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15to18</artifactId>
+                <version>${bcprov-jdk15to18.version}</version>
+            </dependency>
+
+            <!-- javatuples 元组-->
+            <!--<dependency>-->
+            <!--    <groupId>org.javatuples</groupId>-->
+            <!--    <artifactId>javatuples</artifactId>-->
+            <!--    <version>${javatuples.version}</version>-->
+            <!--</dependency>-->
+
+            <!-- url 重写 -->
+            <!--<dependency>-->
+            <!--    <groupId>org.tuckey</groupId>-->
+            <!--    <artifactId>urlrewritefilter</artifactId>-->
+            <!--    <version>${urlrewritefilter.version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+            <!--    <groupId>org.springframework.boot</groupId>-->
+            <!--    <artifactId>spring-boot-starter-tomcat</artifactId>-->
+            <!--    <version>${spring-boot-starter-tomcat.version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+            <!--    <groupId>org.apache.tomcat</groupId>-->
+            <!--    <artifactId>tomcat-juli</artifactId>-->
+            <!--    <version>${tomcat.version}</version>-->
+            <!--</dependency>-->
+
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${tomcat.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+
+            <!--<dependency>-->
+            <!--    <groupId>org.elasticsearch.client</groupId>-->
+            <!--    <artifactId>elasticsearch-rest-high-level-client</artifactId>-->
+            <!--    <version>${elasticsearch.version}</version>-->
+            <!--</dependency>-->
+
+
+
+            <!--<dependency>-->
+            <!--    <groupId>com.xuxueli</groupId>-->
+            <!--    <artifactId>xxl-job-core</artifactId>-->
+            <!--    <version>${xxl-job-core.version}</version>-->
+            <!--</dependency>-->
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!--打包相关-->
+    <!--    <build>-->
+    <!--        <plugins>-->
+
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-resources-plugin</artifactId>-->
+    <!--                <version>3.2.0</version>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+    <!--    </build>-->
+
+    <!-- 仓库相关 -->
+    <distributionManagement>
+        <!--<repository>-->
+        <!--    <id>maven-releases</id>-->
+        <!--    <name>Maven Release Repository</name>-->
+        <!--    <url>http://192.168.123.86:8081/repository/maven-releases/</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+        <!--    <id>maven-snapshots</id>-->
+        <!--    <name>Maven Snapshot Repository</name>-->
+        <!--    <url>http://192.168.123.86:8081/repository/maven-snapshots/</url>-->
+        <!--</snapshotRepository>-->
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>7.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
